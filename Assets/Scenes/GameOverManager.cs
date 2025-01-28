@@ -11,7 +11,6 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        // Skryù texty a tlaËidlo pri ötarte hry
         if (gameOverText != null)
         {
             gameOverText.gameObject.SetActive(false);
@@ -44,31 +43,27 @@ public class GameOverManager : MonoBehaviour
     {
         Debug.Log("Displaying Game Over screen...");
 
-        // Zobrazenie GAME OVER textu
         if (gameOverText != null)
         {
             gameOverText.gameObject.SetActive(true);
             gameOverText.text = "GAME OVER";
         }
 
-        // Zobrazenie skÛre
         if (finalScoreText != null)
         {
             finalScoreText.gameObject.SetActive(true);
             finalScoreText.text = $"Final Score: {finalScore}";
         }
 
-        // Zobrazenie tlaËidla ÑTry again?ì
         if (retryButton != null)
         {
             retryButton.SetActive(true);
         }
     }
 
-    // Funkcia pre tlaËidlo ÑTry again?ì
     public void RetryGame()
     {
         Debug.Log("Restarting the game...");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // NaËÌta aktu·lnu scÈnu od zaËiatku
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
